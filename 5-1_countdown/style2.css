@@ -1,0 +1,12 @@
+
+h2 span {
+    font-size: 1rem;
+}
+.p {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+}
+.p span {
+    font-size: 72px;
+}

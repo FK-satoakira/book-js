@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>テンプレート</title>
+<link href="../../_common/images/favicon.ico" rel="shortcut icon">
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
+<link href="../../_common/css/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+<div class="container">
+<h1>タイトル</h1>
+<h2>サブタイトル</h2>
+</div><!-- /.container -->
+</header>
+<main>
+<div class="container">
+<section>
+<p id="time"></p>
+</section>
+</div><!-- /.container -->
+</main>
+<footer>
+<div class="container">
+<p>JavaScript Samples</p>
+</div><!-- /.container -->
+</footer>
+<script>
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth();
+    const date = now.getUTCDate();
+    const day = now.getUTCDay();
+    const week = ['sun','mon','tue','wed','thu','fri','sat','sun',];
+    const weeks = week[day];
+    const hour = now.getHours();
+    let ampm;
+    if(hour>=12){
+        ampm='pm';
+    }else{
+        ampm='am';
+    }
+    const min = now.getMinutes();
+    const sec = now.getSeconds();
+    const time = `${year}/ ${month+1}/${date}/(${weeks}) ${hour%12}:${min}:${sec}${ampm}`;
+    document.getElementById('time').innerText=time;
+</script>
+</body>
+</html>

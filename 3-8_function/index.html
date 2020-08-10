@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>テンプレート</title>
+<link href="../../_common/images/favicon.ico" rel="shortcut icon">
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
+<link href="../../_common/css/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+<div class="container">
+<h1>タイトル</h1>
+<h2>サブタイトル</h2>
+</div><!-- /.container -->
+</header>
+<main>
+<div class="container">
+<section>
+<p id="p1"></p>
+<p id="p2"></p>
+<p id="p3"></p>
+</section>
+</div><!-- /.container -->
+</main>
+<footer>
+<div class="container">
+<p>JavaScript Samples</p>
+</div><!-- /.container -->
+</footer>
+<script>
+
+    function total(price){
+        const tax = 0.1;
+        // console.log(price+price*tax);
+        return price+price*tax; 
+    }
+    //functionの中でconsole.logすると、total()
+    //だけで呼べる。が、console.log(total())とすると、
+    // undifindになる
+    // console.log(total(1000));
+    
+    
+    console.log(`コーヒーメーカーの値段は${total(8000)}円(税込)です。`);
+    document.getElementById('p1').textContent=`コーヒーメーカーの値段は${total(8000)}円(税込)です。`;
+    document.getElementById('p2').textContent=`コーヒーフィルターの値段は${total(200)}円(税込)です。`;
+    document.getElementById('p3').textContent=`コーヒー豆の値段は${total(1000)}円(税込)です。`;
+
+</script>
+</body>
+</html>

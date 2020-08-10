@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>テンプレート</title>
+<link href="../../_common/images/favicon.ico" rel="shortcut icon">
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
+<link href="../../_common/css/style.css" rel="stylesheet">
+<style>
+    .position{
+        color: coral;
+        font-size: 1.4rem;
+    }
+    section{
+        text-align: center;
+     }
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<h1>あなたはいまどこ？　のテスト</h1>
+<h2>位置情報を表示する　のテスト</h2>
+</div><!-- /.container -->
+</header>
+<main>
+<div class="container">
+<section>
+    <p>あなたはいま</p>
+    <p id="loc" class="position">の場所にいます。ちなみに精度は半径</p>
+    <p><span id="accuracy" class="position"></span>mです。</p>
+</section>
+</div><!-- /.container -->
+</main>
+<footer>
+<div class="container">
+<p>JavaScript Samples</p>
+</div><!-- /.container -->
+</footer>
+<script src="../../_common/scripts/jquery-3.4.1.min.js"></script>
+<script>
+'use strict';
+
+function success(pos) {
+    const lat = pos.coords.latitude;
+    const lng = pos.coords.longitude;
+    const accuracy = pos.coords.accuracy;
+
+    $('#loc').text(`緯度：${lat} 経度：${lng}`);
+    $('#accuracy').text(accuracy);
+
+    // const lat = pos.coords.latitude;
+    // const lon = pos.coords.longitude;
+    // const alt = pos.coords.accuracy;
+    // $('#loc').text(`緯度：${lat} 経度：${lon}`);
+    // $('#accuracy').text(alt);
+}
+
+function fail(error) {
+    alert('位置情報の取得に失敗しました。エラーコード：' + error.code);
+}
+
+navigator.geolocation.getCurrentPosition(success, fail);
+</script>
+</body>
+</html>

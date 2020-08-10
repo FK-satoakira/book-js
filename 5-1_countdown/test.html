@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function print(str){
+  document.write(str + "<br />");
+}
+
+var d = new Date();
+
+document.write("<p>");
+
+print(d);
+
+document.write("</p>");
+
+document.write("<p>");
+
+print("時:" + d.getHours(2));
+print("分:" + d.getMinutes(22));
+print("秒:" + d.getSeconds());
+print("ミリ秒:" + d.getMilliseconds());
+
+document.write("</p>");
+    </script>
+</body>
+</html>

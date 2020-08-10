@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../../book-js/_common/scripts/jquery-3.4.1.min.js"></script>
+    <style>
+        p{
+            font-size: 30px;
+            text-align: center;
+        }
+        /* span{
+            font-size: 70px;
+            color: rgb(206, 137, 191);
+        } */
+    </style>
+</head>
+<body>
+    <h2>最終日まで</h2>
+    <button id="tl">タイムリミット</button>
+    <p>
+        <span id="day"></span>日
+        <span id="hour"></span>時
+        <span id="min"></span>分
+        <span id="sec"></span>秒
+    </p>
+    <script>
+        function countdown(due) {
+            const now = new Date();
+            
+            const rest = due.getTime() - now.getTime();
+            const sec = Math.floor(rest/1000)%60;
+            const min = Math.floor(rest/1000/60)%60;
+            const hour = Math.floor(rest/1000/60/60)%24;
+            const day = Math.floor(rest/1000/60/60/24);
+
+            const count = [day,hour,min,sec];
+            return count;
+        }
+
+        const goal = new Date();
+        goal.setHours(23);
+        goal.setMinutes(59);
+        goal.setSeconds(59);
+        
+        // const counter = countdown(goal);
+        
+
+        function recal() {
+            const counter = countdown(goal);
+            document.getElementById('day').textContent=counter[0];
+            document.getElementById('hour').textContent=String(counter[1]).padStart(2,"0");
+            document.getElementById('min').textContent=String(counter[2]).padStart(2,"0");
+            document.getElementById('sec').textContent=String(counter[3]).padStart(2,"0");
+            refre();
+        }
+
+        function refre() {
+            setTimeout(recal,1000)
+        }
+
+        // recal();
+
+        document.getElementById('tl').addEventListener('click',function(){
+            recal();
+        })
+        $(function(){
+            $('span').css({
+                backgroundColor:'#efefff',
+                color:'#dd55ac',
+                fontSize:70,
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>テンプレート</title>
+<link href="../../_common/images/favicon.ico" rel="shortcut icon">
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
+<link href="../../_common/css/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+<div class="container">
+<h1>タイトル</h1>
+<h2>サブタイトル</h2>
+</div><!-- /.container -->
+</header>
+<main>
+<div class="container">
+<section>
+
+</section>
+</div><!-- /.container -->
+</main>
+<footer>
+<div class="container">
+<p>JavaScript Samples</p>
+</div><!-- /.container -->
+</footer>
+<script>
+    var i=0;
+    var fizzbuzz=(x)=>{     //アロー関数だとvar fb = (x)=>{}
+        if(x%3===0 && x%5===0){
+            return 'fizzbuzz';
+        }else if(x%3===0){
+            return 'fizz';
+        }else if(x%5===0){
+            return 'buzz';
+        }else{
+            return i;
+        }
+    };
+
+    while (i<=30) {
+        console.log(fizzbuzz(i));
+        i++;
+    }
+
+    //whileの中のconsole.logを抜き、fizzbuzz(i)だけだと、
+    //fizzbuzz(i)の[呼び出し]と[リターン]だけが、
+    //30回繰り返されるだけで、consoleはされない。
+</script>
+</body>
+</html>

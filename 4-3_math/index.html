@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>テンプレート</title>
+<link href="../../_common/images/favicon.ico" rel="shortcut icon">
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
+<link href="../../_common/css/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+<div class="container">
+<h1>タイトル</h1>
+<h2>サブタイトル</h2>
+</div><!-- /.container -->
+</header>
+<main>
+<div class="container">
+<section>
+<p id="p1"></p>
+<p id="p2"></p>
+<p id="p3"></p>
+</section>
+</div><!-- /.container -->
+</main>
+<footer>
+<div class="container">
+<p>JavaScript Samples</p>
+</div><!-- /.container -->
+</footer>
+<script>
+    var pai = Math.PI;
+    document.getElementById('p1').textContent=pai;
+    document.getElementById('p2').textContent=Math.floor(pai);
+    // document.getElementById('p3').textContent=Math.floor(pai*100)/100;
+    // document.getElementById('p3').textContent=pp(Math.PI)+'hello';
+     document.getElementById('p3').textContent=point(pai,2)+'hello';
+
+    function point(num,degit){
+        const mover = 10**degit
+        return Math.floor(num*mover) / mover;
+    }
+</script>
+</body>
+</html>
